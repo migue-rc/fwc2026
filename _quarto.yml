@@ -2,13 +2,29 @@ project:
   type: website
 
 website:
+  title: "FIFA World Cup 2026 Predictor"
   favicon: favicon.ico
-  # favicon: "https://migue-rc.github.io/favicon.ico"
-  # Creates a top navbar so users can always get back to your Hub
+  site-url: "https://migue-rc.github.io/fwc2026"
   navbar:
     left:
       - text: "← Back to Main"
         href: "https://migue-rc.github.io"
+      - text: "Home"
+        href: index.ipynb
+      - text: "EDA"
+        menu:
+          - text: "Elo Snapshots"
+            href: EDA_elo_ratings_wc2026.ipynb
+          - text: "Match Histories"
+            href: EDA_elo_scrapper.ipynb
+      - text: "Predictions"
+        menu:
+          - text: "Naive Workflow"
+            href: rounds_naive.ipynb
+          - text: "Ensemble Workflow"
+            href: rounds_ensemble.ipynb
+      - text: "Model vs Reality"
+        href: compare_results.ipynb
 
 # Engine configuration (Moved out of format block)
 execute:
@@ -24,10 +40,10 @@ format:
       light: [sketchy, sketchy-light.scss, custom.scss]
       dark: [sketchy, sketchy-dark.scss, custom.scss]
     # Injects your live, remote CSS file for instant global updates
-    highlight-style: 
+    highlight-style:
       light: github
       dark: monokai
-    include-in-header: 
+    include-in-header:
       text: |
         <link rel="stylesheet" href="https://migue-rc.github.io/brand-theme.css">
     css: local-style.css

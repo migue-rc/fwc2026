@@ -118,3 +118,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+
+### Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/

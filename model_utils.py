@@ -25,13 +25,21 @@ from tsv_utils import (
     GROUP_L,
     MATCH_TYPE_OFFICIAL,
     MATCH_TYPE_WORLD_CUP,
-    normalize_match_type,
+    load_country_data, normalize_match_type,
     tsv_converter,
     tsv_loader,
 )
 
 Workflow = Enum("Workflow", [("NAIVE", 1), ("ATK_DEF", 2), ("HIST", 3)])
 # INFO: every value should be a tuple with the name of the file and the country code.
+
+# Exponent of the player-layer adjustment (atk/def)^reg in the ensemble
+# workflow. (atk/def)^reg is 1 for balanced matchups, boosts a superior attack
+# and discounts one facing a stronger block. Tuned on the 88 matches played
+# through the Round of 32 (see the sweep in compare_results.ipynb): winner
+# accuracy plateaus at 59.1% for reg in [2.3, 4.5] vs 51.1% at the original
+# 0.3, so we take the middle of the plateau rather than the in-sample peak.
+PLAYER_LAYER_REG = 2.5
 
 HOST_LOCATIONS = {"MX", "US", "CA"}
 MIN_CATEGORY_COUNT = 10
@@ -291,21 +299,45 @@ def predict_match(
 
     goals_converted_1_to_2 = model_1.predict(current_2)
     goals_converted_2_to_1 = model_2.predict(current_1)
-    if (
-        workflow == Workflow.ATK_DEF
-        and isinstance(team_1_name, str)
-        and isinstance(team_2_name, str)
-    ):
-        team_1_atk, team_1_def = get_elo_atk_def(team_1_name)
-        team_2_atk, team_2_def = get_elo_atk_def(team_2_name)
-        regularizator = 0.7
-        return (
-            goals_converted_1_to_2.iloc[0] * ((regularizator*team_1_atk) / team_2_def),
-            goals_converted_2_to_1.iloc[0] * ((regularizator*team_2_atk) / team_1_def),
-        )
 
     if np.isnan(goals_converted_1_to_2.iloc[0]) or np.isnan(goals_converted_2_to_1.iloc[0]):
         raise ValueError(
             f"Model failed to predict goals: {goals_converted_1_to_2} {goals_converted_2_to_1}"
         )
+
+    if workflow == Workflow.ATK_DEF:
+        if not (isinstance(team_1_name, str) and isinstance(team_2_name, str)):
+            raise ValueError(
+                "ATK_DEF workflow requires team_1_name and team_2_name to look up player ratings."
+            )
+        team_1_atk, team_1_def = get_elo_atk_def(team_1_name)
+        team_2_atk, team_2_def = get_elo_atk_def(team_2_name)
+        return (
+            goals_converted_1_to_2.iloc[0] * (team_1_atk / team_2_def) ** PLAYER_LAYER_REG,
+            goals_converted_2_to_1.iloc[0] * (team_2_atk / team_1_def) ** PLAYER_LAYER_REG,
+        )
+
     return goals_converted_1_to_2.iloc[0], goals_converted_2_to_1.iloc[0]
+
+
+def predict_round(round: list[tuple[str, str, str]], end_date: pd.Timestamp, filename: str | None = None, workflow: Workflow = Workflow.ATK_DEF):
+    results_df = pd.DataFrame(columns=["team_1", "team_2", "goals_1", "goals_2", "winner", "location"])
+    for team_1, team_2, location in round:
+        team_1_df = load_country_data(country=team_1, end_date=end_date)
+        team_2_df = load_country_data(country=team_2, end_date=end_date)
+        goals_1, goals_2 = predict_match(team_1=team_1_df,
+                                         team_2=team_2_df,
+                                         workflow=workflow,
+                                         location=location,
+                                         team_1_name=team_1,
+                                         team_2_name=team_2,
+                                         )
+        winner = team_1 if goals_1 > goals_2 else team_2 if goals_2 > goals_1 else "Draw"
+        new_row = pd.DataFrame(
+            {"team_1"  : team_1, "team_2": team_2, "goals_1": goals_1, "goals_2": goals_2, "winner": winner,
+             "location": location}, index=[0])
+        results_df = pd.concat([results_df, new_row], ignore_index=True)
+
+    if filename is not None:
+        results_df.to_csv(filename)
+    return results_df

@@ -14,9 +14,30 @@ STYLES := sketchy-light.scss sketchy-dark.scss
 STYLE_BASE_URL ?= https://raw.githubusercontent.com/migue-rc/migue-rc.github.io/main
 
 # Local source (sibling checkout) — used by `sync-styles`.
-MAIN_REPO ?= ../migue-rc.github.io
+MAIN_REPO ?= ../migue-rc
 
-.PHONY: publish preview fetch-styles sync-styles
+.PHONY: publish preview fetch-styles sync-styles execute render scrape
+
+# Notebooks in execution order: predictions first, then the pages that read them.
+NOTEBOOKS := rounds_naive.ipynb rounds_ensemble.ipynb compare_results.ipynb \
+             index.ipynb EDA_elo_ratings_wc2026.ipynb EDA_elo_scrapper.ipynb
+
+# --- Live-tracker update loop ------------------------------------------------
+# After each round: make scrape && make execute && make render
+# (and edit fixtures.py when the next round's matchups are known).
+
+scrape:
+	node elo_scraper.js
+
+execute:
+	@for nb in $(NOTEBOOKS); do \
+		echo "executing $$nb ..."; \
+		.venv/bin/jupyter nbconvert --to notebook --execute --inplace "$$nb" \
+			|| { echo "ERROR: $$nb failed" >&2; exit 1; }; \
+	done
+
+render:
+	quarto render
 
 # Pull the latest SCSS from GitHub before deploying, then publish.
 publish: fetch-styles
