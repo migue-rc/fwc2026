@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://migue-rc.github.io/fwc2026/index.html</loc>
+    <lastmod>2026-07-05T04:27:03.649Z</lastmod>
+  </url>
+  <url>
+    <loc>https://migue-rc.github.io/fwc2026/EDA_elo_ratings_wc2026.html</loc>
+    <lastmod>2026-07-05T04:27:03.643Z</lastmod>
+  </url>
+  <url>
+    <loc>https://migue-rc.github.io/fwc2026/rounds_ensemble.html</loc>
+    <lastmod>2026-07-05T04:27:03.649Z</lastmod>
+  </url>
+  <url>
+    <loc>https://migue-rc.github.io/fwc2026/EDA_elo_scrapper.html</loc>
+    <lastmod>2026-07-05T04:27:03.643Z</lastmod>
+  </url>
+  <url>
+    <loc>https://migue-rc.github.io/fwc2026/compare_results.html</loc>
+    <lastmod>2026-07-05T04:27:03.647Z</lastmod>
+  </url>
+  <url>
+    <loc>https://migue-rc.github.io/fwc2026/rounds_naive.html</loc>
+    <lastmod>2026-07-05T04:27:03.650Z</lastmod>
+  </url>
+</urlset>
