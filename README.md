@@ -39,23 +39,8 @@ Two workflows run side by side on identical fixtures:
 | `model_utils.py` | Per-team Poisson training and match prediction |
 | `report_utils.py` | Prediction storage, scoring, scoreboard, bracket and charts |
 | `tsv_utils.py` / `validators.py` / `elo_utils.py` | Data loading, country-name normalization, player ratings |
-| `elo_scraper.js` | Downloads each team's match history TSV from eloratings.net |
 | `data/` | Scraped match histories (`countries/`), player ratings (`player/`), Elo snapshots |
 | `predictions/` | One CSV per round per workflow (`naive_*.csv`, `ensemble_*.csv`) |
 
-## Updating the tracker after each round
-
-```sh
-node elo_scraper.js       # refresh match histories (adds the played round)
-# edit fixtures.py         # add the next round's matchups once drawn
-make execute              # re-run all notebooks (predict next round, score last one)
-make render               # rebuild the site
-```
-
 Each round's model trains only on matches played **before** that round started, so
 every prediction is reproducible after the fact.
-
-## Requirements
-
-Python ≥ 3.14 managed with [uv](https://docs.astral.sh/uv/) (`uv sync`), Node for the
-scraper, and [Quarto](https://quarto.org) for the site.
