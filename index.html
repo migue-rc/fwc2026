@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel R.">
-<meta name="dcterms.date" content="2026-07-05">
+<meta name="dcterms.date" content="2026-07-10">
 <meta name="description" content="One Poisson model per national team, predicting every round of the 2026 World Cup while the tournament is being played.">
 
 <title>FIFA World Cup 2026 Predictor</title>
@@ -404,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 5, 2026</p>
+      <p class="date">July 10, 2026</p>
     </div>
   </div>
   
@@ -449,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-favorites-by-elo" class="level2">
 <h2 class="anchored" data-anchor-id="the-favorites-by-elo">The favorites, by Elo</h2>
 <p>Before any modeling, the ratings themselves sketch the landscape: the eight strongest teams entering the tournament, and how they got here since the 2018 cycle.</p>
-<div id="b7b7f87569934d9a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-05T04:02:46.838322Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-05T04:02:46.838271Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-05T04:02:47.879993Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-05T04:02:47.879579Z&quot;}}" data-execution_count="1">
+<div id="b7b7f87569934d9a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:53.927231Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:53.927075Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:54.939866Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:54.939567Z&quot;}}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> report_utils <span class="im">import</span> plot_elo_landscape</span>
@@ -468,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="scoreboard" class="level2">
 <h2 class="anchored" data-anchor-id="scoreboard">Scoreboard</h2>
 <p>Winner accuracy and mean absolute goal error per round, for both workflows, over every match played so far. A real draw always counts as a miss: a Poisson model practically never predicts identical expected goals for both sides.</p>
-<div id="431a1d2112354760" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-05T04:02:47.881092Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-05T04:02:47.881019Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-05T04:02:48.315542Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-05T04:02:48.315220Z&quot;}}" data-execution_count="2">
+<div id="431a1d2112354760" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:54.941060Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:54.940993Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:55.391601Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:55.391233Z&quot;}}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> report_utils <span class="im">import</span> scoreboard</span>
@@ -528,6 +528,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>0.688</td>
 <td>1.68</td>
 </tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Round of 16</td>
+<td>8</td>
+<td>0.625</td>
+<td>1.19</td>
+<td>0.750</td>
+<td>1.08</td>
+</tr>
 </tbody>
 </table>
 
@@ -538,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-bracket-predictions-vs-reality" class="level2">
 <h2 class="anchored" data-anchor-id="the-bracket-predictions-vs-reality">The bracket: predictions vs reality</h2>
 <p>The knockout stage, as the model called it and as it actually happened. Bold marks the model’s pick: green when the pick advanced, red when it was eliminated. Green shading follows the team that actually went through, and dashed slots are rounds not yet drawn.</p>
-<div id="05ad2d6997d24528" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-05T04:02:48.316604Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-05T04:02:48.316535Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-05T04:02:48.681373Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-05T04:02:48.681105Z&quot;}}" data-execution_count="3">
+<div id="05ad2d6997d24528" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:55.392652Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:55.392600Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:55.794022Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:55.793671Z&quot;}}" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> report_utils <span class="im">import</span> plot_bracket</span>

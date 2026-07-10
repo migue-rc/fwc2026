@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel R.">
-<meta name="dcterms.date" content="2026-07-05">
+<meta name="dcterms.date" content="2026-07-10">
 
 <title>EDA: Elo Snapshots – FIFA World Cup 2026 Predictor</title>
 <style>
@@ -391,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 5, 2026</p>
+      <p class="date">July 10, 2026</p>
     </div>
   </div>
   
@@ -407,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Spoiler from the conclusion: no, but the reasons why shaped the whole design of the predictor.</p>
 <section id="loading-the-snapshots" class="level2">
 <h2 class="anchored" data-anchor-id="loading-the-snapshots">1. Loading the snapshots</h2>
-<div id="e321e8189f04fc03" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-05T03:29:12.804698Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-05T03:29:12.804559Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-05T03:29:13.085164Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-05T03:29:13.084684Z&quot;}}" data-execution_count="1">
+<div id="e321e8189f04fc03" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:57.377962Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:57.377820Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:57.545092Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:57.544753Z&quot;}}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -534,7 +534,7 @@ Length: 48, dtype: str</code></pre>
 <section id="the-twelve-groups" class="level2">
 <h2 class="anchored" data-anchor-id="the-twelve-groups">2. The twelve groups</h2>
 <p>The 2026 World Cup is the first with 48 teams, split into twelve groups of four. We split the snapshots per group to see how competitive each group is on paper.</p>
-<div id="ae6b3a3402cce243" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-05T03:29:13.087187Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-05T03:29:13.087058Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-05T03:29:13.092747Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-05T03:29:13.092227Z&quot;}}" data-execution_count="2">
+<div id="ae6b3a3402cce243" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:57.546125Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:57.546068Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:57.549545Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:57.549209Z&quot;}}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>GROUP_A <span class="op">=</span> [<span class="st">'Mexico'</span>, <span class="st">'South Africa'</span>, <span class="st">'South Korea'</span>, <span class="st">'Czechia'</span>]</span>
@@ -584,7 +584,7 @@ Length: 48, dtype: str</code></pre>
 <p><span style="color:green, font-weight:bold">All groups are in the dataframe!</span></p>
 </div>
 </div>
-<div id="239795c91d3e50ed" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-05T03:29:13.094064Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-05T03:29:13.093964Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-05T03:29:13.108093Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-05T03:29:13.107696Z&quot;}}" data-execution_count="3">
+<div id="239795c91d3e50ed" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:57.550410Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:57.550361Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:57.558144Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:57.557867Z&quot;}}" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>GROUP_A_all_stats <span class="op">=</span> elo_df[elo_df[<span class="st">"country"</span>].isin(GROUP_A)]</span>
@@ -909,7 +909,7 @@ Length: 48, dtype: str</code></pre>
 <h2 class="anchored" data-anchor-id="how-much-history-is-enough">3. How much history is enough?</h2>
 <p>Ratings from too far back describe teams that no longer exist in any meaningful sense: squads turn over almost completely between World Cup cycles. A reasonable window is about two cycles. The first match of the 2018 World Cup (Russia vs Saudi Arabia, June 14, 2018, Luzhniki Stadium) makes a convenient cutoff.</p>
 <p>The plot below counts how many snapshots each team has since then.</p>
-<div id="6cde29832f3c4a23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-05T03:29:13.109642Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-05T03:29:13.109516Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-05T03:29:14.784075Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-05T03:29:14.783456Z&quot;}}" data-execution_count="4">
+<div id="6cde29832f3c4a23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:57.559062Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:57.559009Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:58.422352Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:58.422045Z&quot;}}" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -963,7 +963,7 @@ Length: 48, dtype: str</code></pre>
 <section id="the-data-density-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-data-density-problem">4. The data density problem</h2>
 <p>Within that window the snapshots are sparse: roughly ten data points per team every eight years. That is nowhere near enough to fit a per-team model on its own, which already hints that we will need the full match-by-match history rather than periodic snapshots. Still, the per-group trajectories are a useful map of the landscape.</p>
-<div id="9e031d9dee669eb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-05T03:29:14.785912Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-05T03:29:14.785670Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-05T03:29:16.030854Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-05T03:29:16.030270Z&quot;}}" data-execution_count="5">
+<div id="9e031d9dee669eb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:58.423483Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:58.423392Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:59.076479Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:59.076080Z&quot;}}" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_elo_per_group(df: pd.DataFrame, title: <span class="bu">str</span> <span class="op">=</span> <span class="st">"Elo Rating per Group"</span>):</span>
