@@ -367,7 +367,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-favorites-by-elo" id="toc-the-favorites-by-elo" class="nav-link" data-scroll-target="#the-favorites-by-elo">The favorites, by Elo</a></li>
   <li><a href="#scoreboard" id="toc-scoreboard" class="nav-link" data-scroll-target="#scoreboard">Scoreboard</a></li>
   <li><a href="#the-bracket-predictions-vs-reality" id="toc-the-bracket-predictions-vs-reality" class="nav-link" data-scroll-target="#the-bracket-predictions-vs-reality">The bracket: predictions vs reality</a></li>
-  <li><a href="#how-this-page-updates" id="toc-how-this-page-updates" class="nav-link" data-scroll-target="#how-this-page-updates">How this page updates</a></li>
   <li><a href="#honest-limitations" id="toc-honest-limitations" class="nav-link" data-scroll-target="#honest-limitations">Honest limitations</a></li>
   </ul>
 </nav>
@@ -563,21 +562,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="how-this-page-updates" class="level2">
-<h2 class="anchored" data-anchor-id="how-this-page-updates">How this page updates</h2>
-<p>The whole tracker refreshes with three commands after each round:</p>
-<ol type="1">
-<li><code>node elo_scraper.js</code> — re-scrape the match histories and ratings.</li>
-<li>Re-run the two prediction notebooks — score the finished round, predict the next one.</li>
-<li><code>quarto render</code> — regenerate the site.</li>
-</ol>
-<p>The only file edited by hand between rounds is <code>fixtures.py</code>, where the next round’s matchups are added once they are known.</p>
-</section>
 <section id="honest-limitations" class="level2">
 <h2 class="anchored" data-anchor-id="honest-limitations">Honest limitations</h2>
 <ul>
 <li><strong>Draws and penalties.</strong> The model predicts expected goals, not shootouts. Knockout matches that finish level are recorded as draws in the match history, so the model is penalized even when its pick advanced on penalties.</li>
-<li><strong>Squad reality.</strong> Injuries, suspensions and rotation are invisible to both workflows. Matchday 3 of the group stage, where qualified teams rest their starters, is where this hurts the most.</li>
+<li><strong>Squad reality.</strong> Injuries, suspensions and rotation are invisible to both workflows.</li>
 <li><strong>Small windows.</strong> A World Cup is 104 matches. Accuracy numbers per round move a lot with two or three results, so treat the round-by-round scoreboard as a trajectory, not a verdict.</li>
 </ul>
 

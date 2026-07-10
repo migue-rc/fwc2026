@@ -56,18 +56,11 @@
     "text": "The bracket: predictions vs reality\nThe knockout stage, as the model called it and as it actually happened. Bold marks the model’s pick: green when the pick advanced, red when it was eliminated. Green shading follows the team that actually went through, and dashed slots are rounds not yet drawn.\n\n\nCode\nfrom report_utils import plot_bracket\n\nfig = plot_bracket(prefix=\"ensemble\")"
   },
   {
-    "objectID": "index.html#how-this-page-updates",
-    "href": "index.html#how-this-page-updates",
-    "title": "FIFA World Cup 2026 Predictor",
-    "section": "How this page updates",
-    "text": "How this page updates\nThe whole tracker refreshes with three commands after each round:\n\nnode elo_scraper.js — re-scrape the match histories and ratings.\nRe-run the two prediction notebooks — score the finished round, predict the next one.\nquarto render — regenerate the site.\n\nThe only file edited by hand between rounds is fixtures.py, where the next round’s matchups are added once they are known."
-  },
-  {
     "objectID": "index.html#honest-limitations",
     "href": "index.html#honest-limitations",
     "title": "FIFA World Cup 2026 Predictor",
     "section": "Honest limitations",
-    "text": "Honest limitations\n\nDraws and penalties. The model predicts expected goals, not shootouts. Knockout matches that finish level are recorded as draws in the match history, so the model is penalized even when its pick advanced on penalties.\nSquad reality. Injuries, suspensions and rotation are invisible to both workflows. Matchday 3 of the group stage, where qualified teams rest their starters, is where this hurts the most.\nSmall windows. A World Cup is 104 matches. Accuracy numbers per round move a lot with two or three results, so treat the round-by-round scoreboard as a trajectory, not a verdict."
+    "text": "Honest limitations\n\nDraws and penalties. The model predicts expected goals, not shootouts. Knockout matches that finish level are recorded as draws in the match history, so the model is penalized even when its pick advanced on penalties.\nSquad reality. Injuries, suspensions and rotation are invisible to both workflows.\nSmall windows. A World Cup is 104 matches. Accuracy numbers per round move a lot with two or three results, so treat the round-by-round scoreboard as a trajectory, not a verdict."
   },
   {
     "objectID": "EDA_elo_ratings_wc2026.html",
