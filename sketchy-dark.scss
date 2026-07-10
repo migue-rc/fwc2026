@@ -30,12 +30,25 @@ $input-border-color: #6c757d !default;
 :root {
   --card-accent: #66d9ef;
   --card-accent-glow: rgba(102, 217, 239, 0.20);
+  --card-accent-contrast: #1a1c20;  // dark text on the cyan accent
 }
 
 // Sidebar category labels at rest: their own color, lightened toward white so
 // the (intentionally dark) category hues stay readable on the dark background.
 .quarto-listing-category .category.cat-colored {
   color: color-mix(in srgb, var(--cat-color), white 45%) !important;
+}
+
+// Card tag pills (outlined): same lightening so outline/text reads on dark.
+.listing-category.cat-colored {
+  --cat-pill-color: color-mix(in srgb, var(--cat-color), white 45%);
+}
+
+// GitHub stat cards come in light/dark pairs. See sketchy-light.scss — the
+// cascade resolves these variables to one winner, avoiding double-hiding.
+:root {
+  --gh-show-light: none;
+  --gh-show-dark: block;
 }
 
 .navbar {

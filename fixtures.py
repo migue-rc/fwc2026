@@ -180,6 +180,16 @@ round_of_16 = [
     ("Colombia", "Switzerland", "CA"),
 ]
 
+quarter_finals = [
+# thu 09
+    ("Morocco", "France", "US"),
+    # fri 10
+    ("Spain", "Belgium", "US"),
+    # sat 11
+    ("Norway", "England", "US"),
+    ("Argentina", "Switzerland", "US"),
+]
+
 # --- Calendar ----------------------------------------------------------------
 # Each entry: (fixtures, start_date, end_date). Predictions for a round train
 # only on matches played BEFORE start_date (no leakage on re-runs), and its
@@ -191,6 +201,7 @@ ROUNDS = {
     "third_round": (third_round, pd.to_datetime("2026-06-24"), pd.to_datetime("2026-06-27")),
     "round_of_32": (round_of_32, pd.to_datetime("2026-06-28"), pd.to_datetime("2026-07-03")),
     "round_of_16": (round_of_16, pd.to_datetime("2026-07-04"), pd.to_datetime("2026-07-07")),
+    "quarter_finals": (quarter_finals, pd.to_datetime("2026-07-09"), pd.to_datetime("2026-07-11")),
 }
 
 ROUND_LABELS = {
@@ -199,12 +210,12 @@ ROUND_LABELS = {
     "third_round": "Group stage - Matchday 3",
     "round_of_32": "Round of 32",
     "round_of_16": "Round of 16",
+    "quarter_finals": "Quarter-finals",
 }
 
 # Rounds still to be drawn (placeholders for the bracket visual).
-UPCOMING_ROUNDS = ["quarter_finals", "semi_finals", "final"]
+UPCOMING_ROUNDS = ["semi_finals", "final"]
 UPCOMING_LABELS = {
-    "quarter_finals": "Quarter-finals",
     "semi_finals": "Semi-finals",
     "final": "Final",
 }

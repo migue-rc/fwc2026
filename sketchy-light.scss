@@ -12,12 +12,22 @@ $ink-strong:   #000000;   // hover
 :root {
   --card-accent: #185fa5;
   --card-accent-glow: rgba(24, 95, 165, 0.22);
+  --card-accent-contrast: #ffffff;  // text on top of the accent
 }
 
 // Sidebar category labels at rest: their own category color (readable on the
 // light paper background). Hover/active accent is handled in brand-theme.css.
 .quarto-listing-category .category.cat-colored {
   color: var(--cat-color) !important;
+}
+
+// GitHub stat cards come in light/dark pairs. Visibility is driven by these
+// variables (consumed in brand-theme.css) rather than per-bundle display
+// rules: the cascade picks exactly one winner even if both theme bundles
+// happen to be applied, so the pair can never be hidden twice.
+:root {
+  --gh-show-light: block;
+  --gh-show-dark: none;
 }
 
 // Sketchy ships a dark navbar (#343a40) with white text even in light mode,
