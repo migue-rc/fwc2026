@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel R.">
-<meta name="dcterms.date" content="2026-07-10">
+<meta name="dcterms.date" content="2026-07-12">
 
 <title>Predictions: Ensemble Workflow – FIFA World Cup 2026 Predictor</title>
 <style>
@@ -369,6 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#round-of-32" id="toc-round-of-32" class="nav-link" data-scroll-target="#round-of-32">3.4 Round of 32</a></li>
   <li><a href="#round-of-16" id="toc-round-of-16" class="nav-link" data-scroll-target="#round-of-16">3.5 Round of 16</a></li>
   <li><a href="#quarter-finals" id="toc-quarter-finals" class="nav-link" data-scroll-target="#quarter-finals">3.6 Quarter-finals</a></li>
+  <li><a href="#semi-finals" id="toc-semi-finals" class="nav-link" data-scroll-target="#semi-finals">3.7 Semi-finals</a></li>
   </ul></li>
   <li><a href="#scoreboard" id="toc-scoreboard" class="nav-link" data-scroll-target="#scoreboard">4. Scoreboard</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">5. Discussion</a></li>
@@ -399,7 +400,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 10, 2026</p>
+      <p class="date">July 12, 2026</p>
     </div>
   </div>
   
@@ -422,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>model_utils.py</code> trains the per-team Poisson models,</li>
 <li><code>report_utils.py</code> generates, stores and scores the predictions.</li>
 </ul>
-<div id="b7d6cbc1cacc4912" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:03.421153Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:03.420969Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:04.134129Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:04.133591Z&quot;}}" data-execution_count="1">
+<div id="b7d6cbc1cacc4912" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:39:59.783032Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:39:59.782917Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:40:01.542719Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:40:01.542071Z&quot;}}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> model_utils <span class="im">import</span> Workflow</span>
@@ -434,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="generating-the-predictions">2. Generating the predictions</h2>
 <p>One call predicts every round in the calendar. For each round, the model trains only on matches played <em>before</em> the round started, so these predictions are fully reproducible: re-running this notebook after the tournament produces the same numbers that were published in real time.</p>
 <p>Each round is written to <code>predictions/ensemble_&lt;round&gt;.csv</code>, separate from the other workflow’s files, so the two approaches can always be compared side by side.</p>
-<div id="c9c8b483b1f5441b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:04.135341Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:04.135253Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:38.353242Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:38.352855Z&quot;}}" data-execution_count="2">
+<div id="c9c8b483b1f5441b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:40:01.545032Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:40:01.544861Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:13.544724Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:13.543695Z&quot;}}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> predict_all_rounds(Workflow.ATK_DEF, <span class="st">"ensemble"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -447,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="group-stage---matchday-1" class="level3">
 <h3 class="anchored" data-anchor-id="group-stage---matchday-1">3.1 Group stage - Matchday 1</h3>
 <p>Twenty-four matches, and the model’s first contact with reality. Group-stage matches allow draws, but a Poisson model almost never predicts identical expected goals for both sides, so every real draw counts against us here.</p>
-<div id="48c8a48a96254df8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:38.354567Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:38.354515Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:38.469295Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:38.468951Z&quot;}}" data-execution_count="3">
+<div id="48c8a48a96254df8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:13.547182Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:13.547036Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:13.807367Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:13.806730Z&quot;}}" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>round_detail(<span class="st">"ensemble"</span>, <span class="st">"first_round"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -494,7 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">2</th>
 <td>Canada</td>
 <td>Bosnia and Herzegovina</td>
-<td>1.53 - 1.06</td>
+<td>1.53 - 1.05</td>
 <td>1 - 1</td>
 <td>Canada</td>
 <td>Draw</td>
@@ -554,7 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">8</th>
 <td>Germany</td>
 <td>Curaçao</td>
-<td>19.67 - 0.2</td>
+<td>19.68 - 0.2</td>
 <td>7 - 1</td>
 <td>Germany</td>
 <td>Germany</td>
@@ -614,7 +615,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">14</th>
 <td>Spain</td>
 <td>Cabo Verde</td>
-<td>8.18 - 0.57</td>
+<td>8.19 - 0.57</td>
 <td>0 - 0</td>
 <td>Spain</td>
 <td>Draw</td>
@@ -674,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">20</th>
 <td>Portugal</td>
 <td>Congo DR</td>
-<td>31.58 - 0.0</td>
+<td>31.57 - 0.0</td>
 <td>1 - 1</td>
 <td>Portugal</td>
 <td>Draw</td>
@@ -704,7 +705,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">23</th>
 <td>England</td>
 <td>Croatia</td>
-<td>11.41 - 1.77</td>
+<td>11.39 - 1.77</td>
 <td>4 - 2</td>
 <td>England</td>
 <td>England</td>
@@ -720,7 +721,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="group-stage---matchday-2" class="level3">
 <h3 class="anchored" data-anchor-id="group-stage---matchday-2">3.2 Group stage - Matchday 2</h3>
 <p>By matchday 2 the favorites usually start separating from the rest of the group, which tends to make matches easier to call.</p>
-<div id="1d7cd4f060d9453c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:38.470295Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:38.470242Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:38.580696Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:38.580306Z&quot;}}" data-execution_count="4">
+<div id="1d7cd4f060d9453c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:13.809559Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:13.809410Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:14.133053Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:14.132049Z&quot;}}" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>round_detail(<span class="st">"ensemble"</span>, <span class="st">"second_round"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -757,7 +758,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">1</th>
 <td>Mexico</td>
 <td>South Korea</td>
-<td>1.35 - 2.0</td>
+<td>1.34 - 2.0</td>
 <td>1 - 0</td>
 <td>South Korea</td>
 <td>Mexico</td>
@@ -807,7 +808,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">6</th>
 <td>Türkiye</td>
 <td>Paraguay</td>
-<td>2.35 - 1.23</td>
+<td>2.35 - 1.24</td>
 <td>0 - 1</td>
 <td>Türkiye</td>
 <td>Paraguay</td>
@@ -817,7 +818,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">7</th>
 <td>USA</td>
 <td>Australia</td>
-<td>2.76 - 0.31</td>
+<td>2.75 - 0.31</td>
 <td>2 - 0</td>
 <td>USA</td>
 <td>USA</td>
@@ -967,7 +968,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">22</th>
 <td>England</td>
 <td>Ghana</td>
-<td>22.27 - 0.06</td>
+<td>22.29 - 0.06</td>
 <td>0 - 0</td>
 <td>England</td>
 <td>Draw</td>
@@ -977,7 +978,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">23</th>
 <td>Panama</td>
 <td>Croatia</td>
-<td>0.0 - 4.34</td>
+<td>0.0 - 4.37</td>
 <td>0 - 1</td>
 <td>Croatia</td>
 <td>Croatia</td>
@@ -993,7 +994,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="group-stage---matchday-3" class="level3">
 <h3 class="anchored" data-anchor-id="group-stage---matchday-3">3.3 Group stage - Matchday 3</h3>
 <p>The hardest matchday to predict: teams that already qualified rotate their squads, and teams that are already out play with nothing to lose. None of that appears in the training data.</p>
-<div id="0176e90cddd644d1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:38.581668Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:38.581611Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:38.691542Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:38.691082Z&quot;}}" data-execution_count="5">
+<div id="0176e90cddd644d1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:14.135357Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:14.135190Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:14.468170Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:14.466993Z&quot;}}" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>round_detail(<span class="st">"ensemble"</span>, <span class="st">"third_round"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1020,7 +1021,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">0</th>
 <td>Czechia</td>
 <td>Mexico</td>
-<td>0.6 - 2.61</td>
+<td>0.6 - 2.62</td>
 <td>0 - 3</td>
 <td>Mexico</td>
 <td>Mexico</td>
@@ -1030,7 +1031,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">1</th>
 <td>South Africa</td>
 <td>South Korea</td>
-<td>0.02 - 4.1</td>
+<td>0.02 - 4.11</td>
 <td>1 - 0</td>
 <td>South Korea</td>
 <td>South Africa</td>
@@ -1090,7 +1091,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">7</th>
 <td>Paraguay</td>
 <td>Australia</td>
-<td>1.27 - 0.16</td>
+<td>1.28 - 0.16</td>
 <td>0 - 0</td>
 <td>Paraguay</td>
 <td>Draw</td>
@@ -1160,7 +1161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">14</th>
 <td>Uruguay</td>
 <td>Spain</td>
-<td>0.17 - 5.75</td>
+<td>0.17 - 5.76</td>
 <td>0 - 1</td>
 <td>Spain</td>
 <td>Spain</td>
@@ -1250,7 +1251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">23</th>
 <td>Croatia</td>
 <td>Ghana</td>
-<td>3.43 - 0.04</td>
+<td>3.49 - 0.04</td>
 <td>2 - 1</td>
 <td>Croatia</td>
 <td>Croatia</td>
@@ -1266,7 +1267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="round-of-32" class="level3">
 <h3 class="anchored" data-anchor-id="round-of-32">3.4 Round of 32</h3>
 <p>First knockout round. A caveat on scoring: the match history records the score after 90 or 120 minutes, so a match decided on penalties is recorded as a draw and counts against the model even when its pick advanced.</p>
-<div id="66816859f26346a7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:38.692578Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:38.692515Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:38.767108Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:38.766767Z&quot;}}" data-execution_count="6">
+<div id="66816859f26346a7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:14.470522Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:14.470363Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:14.674616Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:14.673812Z&quot;}}" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>round_detail(<span class="st">"ensemble"</span>, <span class="st">"round_of_32"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1313,7 +1314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">2</th>
 <td>Germany</td>
 <td>Paraguay</td>
-<td>3.77 - 0.64</td>
+<td>3.76 - 0.64</td>
 <td>1 - 1</td>
 <td>Germany</td>
 <td>Draw</td>
@@ -1363,7 +1364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">7</th>
 <td>England</td>
 <td>Congo DR</td>
-<td>12.74 - 1.8</td>
+<td>12.75 - 1.8</td>
 <td>2 - 1</td>
 <td>England</td>
 <td>England</td>
@@ -1383,7 +1384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">9</th>
 <td>USA</td>
 <td>Bosnia and Herzegovina</td>
-<td>10.14 - 0.92</td>
+<td>10.15 - 0.92</td>
 <td>2 - 0</td>
 <td>USA</td>
 <td>USA</td>
@@ -1403,7 +1404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">11</th>
 <td>Portugal</td>
 <td>Croatia</td>
-<td>7.06 - 0.37</td>
+<td>7.02 - 0.37</td>
 <td>2 - 1</td>
 <td>Portugal</td>
 <td>Portugal</td>
@@ -1459,7 +1460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="round-of-16" class="level3">
 <h3 class="anchored" data-anchor-id="round-of-16">3.5 Round of 16</h3>
 <p>Second knockout round — the same penalty-shootout caveat as Round of 32 applies here too.</p>
-<div id="35e6fa570c3444da" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:38.768132Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:38.768081Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:38.808500Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:38.808100Z&quot;}}" data-execution_count="7">
+<div id="35e6fa570c3444da" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:14.676828Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:14.676688Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:14.772415Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:14.771615Z&quot;}}" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>round_detail(<span class="st">"ensemble"</span>, <span class="st">"round_of_16"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1486,7 +1487,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">0</th>
 <td>Morocco</td>
 <td>Canada</td>
-<td>3.52 - 0.44</td>
+<td>3.53 - 0.44</td>
 <td>3 - 0</td>
 <td>Morocco</td>
 <td>Morocco</td>
@@ -1571,13 +1572,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="quarter-finals" class="level3">
 <h3 class="anchored" data-anchor-id="quarter-finals">3.6 Quarter-finals</h3>
-<p>Predictions for the current round. The evaluation below fills in automatically as matches are played and the ratings are re-scraped.</p>
-<div id="195c5fcf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:38.809461Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:38.809407Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:38.831179Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:38.830845Z&quot;}}" data-execution_count="8">
+<p>Third knockout round — the same penalty-shootout caveat as Round of 32 applies here too.</p>
+<div id="195c5fcf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:14.774536Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:14.774393Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:14.828742Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:14.828091Z&quot;}}" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>round_detail(<span class="st">"ensemble"</span>, <span class="st">"quarter_finals"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">team_1</th>
+<th data-quarto-table-cell-role="th">team_2</th>
+<th data-quarto-table-cell-role="th">predicted_score</th>
+<th data-quarto-table-cell-role="th">real_score</th>
+<th data-quarto-table-cell-role="th">winner_pred</th>
+<th data-quarto-table-cell-role="th">winner_real</th>
+<th data-quarto-table-cell-role="th">correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Morocco</td>
+<td>France</td>
+<td>0.96 - 3.55</td>
+<td>0 - 2</td>
+<td>France</td>
+<td>France</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Spain</td>
+<td>Belgium</td>
+<td>2.12 - 0.63</td>
+<td>2 - 1</td>
+<td>Spain</td>
+<td>Spain</td>
+<td>True</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Norway</td>
+<td>England</td>
+<td>2.51 - 2.88</td>
+<td>1 - 2</td>
+<td>England</td>
+<td>England</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Argentina</td>
+<td>Switzerland</td>
+<td>1.63 - 0.82</td>
+<td>3 - 1</td>
+<td>Argentina</td>
+<td>Argentina</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="semi-finals" class="level3">
+<h3 class="anchored" data-anchor-id="semi-finals">3.7 Semi-finals</h3>
+<p>Predictions for the current round. The evaluation below fills in automatically as matches are played and the ratings are re-scraped.</p>
+<div id="2ab4a7e7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:14.830254Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:14.830133Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:14.858841Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:14.858084Z&quot;}}" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>round_detail(<span class="st">"ensemble"</span>, <span class="st">"semi_finals"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -1594,30 +1668,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
-<td>Morocco</td>
 <td>France</td>
-<td>0.96 - 3.55</td>
+<td>Spain</td>
+<td>1.68 - 1.53</td>
 <td>France</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
-<td>Spain</td>
-<td>Belgium</td>
-<td>2.12 - 0.63</td>
-<td>Spain</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Norway</td>
 <td>England</td>
-<td>2.51 - 2.88</td>
-<td>England</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
 <td>Argentina</td>
-<td>Switzerland</td>
-<td>1.63 - 0.82</td>
+<td>1.56 - 1.63</td>
 <td>Argentina</td>
 </tr>
 </tbody>
@@ -1631,12 +1691,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="scoreboard" class="level2">
 <h2 class="anchored" data-anchor-id="scoreboard">4. Scoreboard</h2>
 <p>Winner accuracy and mean absolute goal error per round, over the matches played so far.</p>
-<div id="fecff83cff684dae" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:38.832161Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:38.832101Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:39.274372Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:39.273988Z&quot;}}" data-execution_count="9">
+<div id="fecff83cff684dae" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:14.860350Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:14.860235Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:15.988161Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:15.987566Z&quot;}}" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>scoreboard(prefixes<span class="op">=</span>(<span class="st">"ensemble"</span>,))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>scoreboard(prefixes<span class="op">=</span>(<span class="st">"ensemble"</span>,))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
 
@@ -1685,6 +1745,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>8</td>
 <td>0.750</td>
 <td>1.08</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Quarter-finals</td>
+<td>4</td>
+<td>1.000</td>
+<td>0.87</td>
 </tr>
 </tbody>
 </table>

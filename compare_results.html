@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel R.">
-<meta name="dcterms.date" content="2026-07-10">
+<meta name="dcterms.date" content="2026-07-12">
 
 <title>Model vs Reality – FIFA World Cup 2026 Predictor</title>
 <style>
@@ -392,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 10, 2026</p>
+      <p class="date">July 12, 2026</p>
     </div>
   </div>
   
@@ -412,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="the-scoreboard" class="level2">
 <h2 class="anchored" data-anchor-id="the-scoreboard">1. The scoreboard</h2>
-<div id="bbea350c5d21462d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:40.874858Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:40.874676Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:42.054837Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:42.054479Z&quot;}}" data-execution_count="1">
+<div id="bbea350c5d21462d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:19.881173Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:19.881044Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:22.750111Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:22.748863Z&quot;}}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> report_utils <span class="im">import</span> scoreboard</span>
@@ -442,7 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Group stage - Matchday 1</td>
 <td>24</td>
 <td>0.500</td>
-<td>2.15</td>
+<td>2.14</td>
 <td>0.542</td>
 <td>2.59</td>
 </tr>
@@ -482,6 +482,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>0.750</td>
 <td>1.08</td>
 </tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Quarter-finals</td>
+<td>4</td>
+<td>0.750</td>
+<td>0.83</td>
+<td>1.000</td>
+<td>0.87</td>
+</tr>
 </tbody>
 </table>
 
@@ -492,7 +501,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="does-the-player-layer-earn-its-keep" class="level2">
 <h2 class="anchored" data-anchor-id="does-the-player-layer-earn-its-keep">2. Does the player layer earn its keep?</h2>
 <p>The chart below tracks both workflows round by round. If the two lines sit on top of each other, the player layer is not adding information beyond what the team-level history already contains.</p>
-<div id="a609470c7de3409f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:42.056018Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:42.055961Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:42.161780Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:42.161268Z&quot;}}" data-execution_count="2">
+<div id="a609470c7de3409f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:22.752192Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:22.752059Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:23.006266Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:23.005380Z&quot;}}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -506,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        axes[<span class="dv">0</span>].plot(rounds, sb[acc_col], marker<span class="op">=</span><span class="st">"o"</span>, color<span class="op">=</span>color, label<span class="op">=</span>prefix)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        axes[<span class="dv">1</span>].plot(rounds, sb[mae_col], marker<span class="op">=</span><span class="st">"o"</span>, color<span class="op">=</span>color, label<span class="op">=</span>prefix)</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>short_labels <span class="op">=</span> [<span class="st">"MD 1"</span>, <span class="st">"MD 2"</span>, <span class="st">"MD 3"</span>, <span class="st">"R32"</span>, <span class="st">"R16"</span>][: <span class="bu">len</span>(sb)]</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>short_labels <span class="op">=</span> [<span class="st">"MD 1"</span>, <span class="st">"MD 2"</span>, <span class="st">"MD 3"</span>, <span class="st">"R32"</span>, <span class="st">"R16"</span>, <span class="st">"QF"</span>, <span class="st">"SF"</span>, <span class="st">"F"</span>][: <span class="bu">len</span>(sb)]</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, title <span class="kw">in</span> <span class="bu">zip</span>(axes, [<span class="st">"Winner accuracy"</span>, <span class="st">"Goal MAE"</span>]):</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    ax.set_xticks(<span class="bu">list</span>(rounds), short_labels)</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    ax.set_title(title, color<span class="op">=</span><span class="st">"#888888"</span>)</span>
@@ -529,17 +538,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="18b4b3e50f67400b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:42.162794Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:42.162730Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:42.238120Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:42.237783Z&quot;}}" data-execution_count="3">
+<div id="18b4b3e50f67400b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:23.008674Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:23.008493Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:23.179169Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:23.178590Z&quot;}}" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>naive_pooled <span class="op">=</span> (sb[<span class="st">"naive_accuracy"</span>] <span class="op">*</span> sb[<span class="st">"matches"</span>]).<span class="bu">sum</span>() <span class="op">/</span> sb[<span class="st">"matches"</span>].<span class="bu">sum</span>()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ensemble_pooled <span class="op">=</span> (sb[<span class="st">"ensemble_accuracy"</span>] <span class="op">*</span> sb[<span class="st">"matches"</span>]).<span class="bu">sum</span>() <span class="op">/</span> sb[<span class="st">"matches"</span>].<span class="bu">sum</span>()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>gap <span class="op">=</span> (sb[<span class="st">"ensemble_accuracy"</span>] <span class="op">-</span> sb[<span class="st">"naive_accuracy"</span>]) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">"MD 1"</span>, <span class="st">"MD 2"</span>, <span class="st">"MD 3"</span>, <span class="st">"R32"</span>, <span class="st">"R16"</span>][: <span class="bu">len</span>(sb)] <span class="op">+</span> [<span class="st">"ALL"</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">"MD 1"</span>, <span class="st">"MD 2"</span>, <span class="st">"MD 3"</span>, <span class="st">"R32"</span>, <span class="st">"R16"</span>, <span class="st">"QF"</span>, <span class="st">"SF"</span>, <span class="st">"F"</span>][: <span class="bu">len</span>(sb)] <span class="op">+</span> [<span class="st">"ALL"</span>]</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> <span class="bu">list</span>(gap) <span class="op">+</span> [(ensemble_pooled <span class="op">-</span> naive_pooled) <span class="op">*</span> <span class="dv">100</span>]</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> [</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>n<span class="sc">:.0%}</span><span class="ss"> </span><span class="ch">\u2192</span><span class="ss"> </span><span class="sc">{</span>e<span class="sc">:.0%}</span><span class="ss">"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>n<span class="sc">:.0%}</span><span class="ss"> → </span><span class="sc">{</span>e<span class="sc">:.0%}</span><span class="ss">"</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n, e <span class="kw">in</span> <span class="bu">zip</span>(<span class="bu">list</span>(sb[<span class="st">"naive_accuracy"</span>]) <span class="op">+</span> [naive_pooled],</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">list</span>(sb[<span class="st">"ensemble_accuracy"</span>]) <span class="op">+</span> [ensemble_pooled])</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>]</span>
@@ -595,7 +604,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Force one: the group stage is a three-outcome problem.</strong> Group matches can end in a draw, and a goals-based model structurally cannot predict one - it virtually never produces identical expected goals for both sides. Every real draw is a guaranteed miss before the match even kicks off. In the knockout stage a draw stops being a final outcome (someone always advances), so the problem collapses to a binary call - the kind this model is actually good at.</p>
 <p><strong>Force two: the field balances itself.</strong> Every round eliminates weaker teams, so the Elo gap between opponents shrinks steadily. Tighter matchups make each individual call intrinsically harder - working against force one - which is why the climb in accuracy is gradual rather than dramatic, and why matches keep drifting toward the penalty-shootout territory no goals model can reach.</p>
 <p>The cell below separates the two effects: accuracy over <em>all</em> matches versus accuracy over the matches that actually produced a winner, next to the average Elo gap between opponents going into each round.</p>
-<div id="cdfa1aa5260e4d0e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:42.239248Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:42.239189Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:43.325159Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:43.324818Z&quot;}}" data-execution_count="4">
+<div id="cdfa1aa5260e4d0e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:23.180917Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:23.180799Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:25.532910Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:25.532298Z&quot;}}" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -633,7 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>fig, (ax_acc, ax_gap) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.3</span>), dpi<span class="op">=</span><span class="dv">140</span>)</span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="bu">len</span>(phases))</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>short_labels <span class="op">=</span> [<span class="st">"MD 1"</span>, <span class="st">"MD 2"</span>, <span class="st">"MD 3"</span>, <span class="st">"R32"</span>, <span class="st">"R16"</span>][: <span class="bu">len</span>(phases)]</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>short_labels <span class="op">=</span> [<span class="st">"MD 1"</span>, <span class="st">"MD 2"</span>, <span class="st">"MD 3"</span>, <span class="st">"R32"</span>, <span class="st">"R16"</span>, <span class="st">"QF"</span>, <span class="st">"SF"</span>, <span class="st">"F"</span>][: <span class="bu">len</span>(phases)]</span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>ax_acc.bar(x <span class="op">-</span> <span class="fl">0.19</span>, phases[<span class="st">"accuracy_all"</span>], width<span class="op">=</span><span class="fl">0.38</span>,</span>
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>           color<span class="op">=</span><span class="st">"#2e9e5b"</span>, alpha<span class="op">=</span><span class="fl">.55</span>, label<span class="op">=</span><span class="st">"all matches"</span>)</span>
@@ -723,6 +732,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>0.125</td>
 <td>237.500</td>
 </tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>quarter_finals</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0.000</td>
+<td>350.000</td>
+</tr>
 </tbody>
 </table>
 
@@ -747,7 +764,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-draw-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-draw-problem">4. The draw problem</h2>
 <p>A Poisson model outputs <em>expected</em> goals — continuous numbers like 1.43 vs 1.28 — so it essentially never predicts a draw, while roughly a quarter of group-stage matches end level. One pragmatic patch: <strong>call it a draw when the predicted margin is under one goal.</strong> The cell below rescores the group stage under that rule for both workflows.</p>
-<div id="fe856428ac534687" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:43.326182Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:43.326126Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:44.040559Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:44.040146Z&quot;}}" data-execution_count="5">
+<div id="fe856428ac534687" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:25.535027Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:25.534898Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:26.945563Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:26.944932Z&quot;}}" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -848,7 +865,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tuning-the-player-layer" class="level2">
 <h2 class="anchored" data-anchor-id="tuning-the-player-layer">5. Tuning the player layer</h2>
 <p>The ensemble multiplies the predicted goals by <code>(atk/def) ** reg</code>, where <code>reg</code> controls how hard the player layer pushes. Because the underlying Poisson predictions do not depend on <code>reg</code>, we can sweep the exponent over every match played so far without retraining a single model. <code>reg = 0</code> is exactly the naive workflow, so the curve below directly answers two questions at once: <em>does player information help, and how much weight should it get?</em></p>
-<div id="83693ddaa2e1419d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-09T21:51:44.041696Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-09T21:51:44.041631Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-09T21:51:52.371833Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-09T21:51:52.371526Z&quot;}}" data-execution_count="6">
+<div id="83693ddaa2e1419d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-12T15:41:26.947400Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-12T15:41:26.947276Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-12T15:41:43.811743Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-12T15:41:43.811273Z&quot;}}" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -887,8 +904,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>reg         5.100000
-accuracy    0.635417
-goal_mae    2.467214
+accuracy    0.650000
+goal_mae    2.407809
 Name: 51, dtype: float64</code></pre>
 </div>
 <div class="cell-output cell-output-display">
