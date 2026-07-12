@@ -123,3 +123,4 @@ Temporary Items
 .venv/
 __pycache__/
 .ipynb_checkpoints/
+elo_scraper.js

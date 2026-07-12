@@ -244,7 +244,7 @@ NEUTRAL = "#888888"    # readable on both light and dark backgrounds
 def _bracket_data(prefix: str) -> list[tuple[str, list[dict]]]:
     """Collect per-match display data for the knockout rounds."""
     columns = []
-    for round_key in ("round_of_32", "round_of_16", "quarter_finals"):
+    for round_key in ("round_of_32", "round_of_16", "quarter_finals", "semi_finals"):
         fixtures, _start, _end = ROUNDS[round_key]
         predictions = {}
         path = prediction_path(prefix, round_key)

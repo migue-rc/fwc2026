@@ -190,6 +190,13 @@ quarter_finals = [
     ("Argentina", "Switzerland", "US"),
 ]
 
+semi_finals = [
+    # Tue 14
+    ("France", "Spain", "US"),
+    # Wed 15
+    ("England", "Argentina", "US")
+]
+
 # --- Calendar ----------------------------------------------------------------
 # Each entry: (fixtures, start_date, end_date). Predictions for a round train
 # only on matches played BEFORE start_date (no leakage on re-runs), and its
@@ -202,6 +209,7 @@ ROUNDS = {
     "round_of_32": (round_of_32, pd.to_datetime("2026-06-28"), pd.to_datetime("2026-07-03")),
     "round_of_16": (round_of_16, pd.to_datetime("2026-07-04"), pd.to_datetime("2026-07-07")),
     "quarter_finals": (quarter_finals, pd.to_datetime("2026-07-09"), pd.to_datetime("2026-07-11")),
+    "semi_finals": (semi_finals, pd.to_datetime("2026-07-14"), pd.to_datetime("2026-07-15")),
 }
 
 ROUND_LABELS = {
@@ -211,11 +219,11 @@ ROUND_LABELS = {
     "round_of_32": "Round of 32",
     "round_of_16": "Round of 16",
     "quarter_finals": "Quarter-finals",
+    "semi_finals": "Semi-finals",
 }
 
 # Rounds still to be drawn (placeholders for the bracket visual).
-UPCOMING_ROUNDS = ["semi_finals", "final"]
+UPCOMING_ROUNDS = ["final"]
 UPCOMING_LABELS = {
-    "semi_finals": "Semi-finals",
     "final": "Final",
 }
